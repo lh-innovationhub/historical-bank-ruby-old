@@ -53,4 +53,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'webmock',    '~> 2.3'
   s.add_development_dependency 'faker',      '~> 1.6'
   s.add_development_dependency 'timecop',    '~> 0.8'
+  s.add_development_dependency 'rake',       '~> 11.0'
 end
