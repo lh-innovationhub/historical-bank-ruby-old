@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+- Relax `redis` gem versions '>=3.3', '~> 4.0'
+- Fix redis deprecation
+
 ## 0.1.3
 - Support `redis` gem versions '>=3.3', '< 4.1' (#3)
 
