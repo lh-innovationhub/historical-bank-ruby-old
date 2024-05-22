@@ -18,7 +18,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'historical-bank'
-  s.version     = '0.1.4'
+  s.version     = '0.1.5'
   s.summary     = 'Historical Bank'
   s.description = 'A `Money::Bank::Base` with historical exchange rates'
   s.authors     = ['Kostis Dadamis', 'Emili Parreno']
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['lib/**/*.rb', 'examples/*.rb', 'spec/**/*.rb', 'spec/**/*.json'].to_a
   s.files += ['Gemfile', 'historical-bank.gemspec', 'README.md', 'LICENSE',
-    'CONTRIBUTING.md', 'AUTHORS', 'CHANGELOG.md']
+              'CONTRIBUTING.md', 'AUTHORS', 'CHANGELOG.md']
 
   s.test_files = s.files.grep(%r{^spec/})
 
@@ -40,15 +40,15 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0.0'
 
-  s.add_runtime_dependency 'money',    '~> 6.7'
   s.add_runtime_dependency 'httparty', '~> 0.14'
+  s.add_runtime_dependency 'money',    '~> 6.7'
   s.add_runtime_dependency 'redis',    ['>=3.3', '~> 4.0']
 
-  s.add_development_dependency 'rspec',      '~> 3.5'
-  s.add_development_dependency 'pry-byebug', '~> 3.4'
-  s.add_development_dependency 'rubocop',    '~> 0.52'
-  s.add_development_dependency 'rack-test',  '~> 0.6'
-  s.add_development_dependency 'webmock',    '~> 2.3'
   s.add_development_dependency 'faker',      '~> 1.6'
+  s.add_development_dependency 'pry-byebug', '~> 3.4'
+  s.add_development_dependency 'rack-test',  '~> 0.6'
+  s.add_development_dependency 'rspec',      '~> 3.5'
+  s.add_development_dependency 'rubocop',    '~> 0.52'
   s.add_development_dependency 'timecop',    '~> 0.8'
+  s.add_development_dependency 'webmock',    '~> 2.3'
 end
