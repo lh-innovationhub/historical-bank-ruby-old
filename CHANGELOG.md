@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.5
+- Fix getting rates from memory. 1000x faster conversion on slow Redis.
+
 ## 0.1.4
 - Relax `redis` gem versions '>=3.3', '~> 4.0'
 - Fix redis deprecation
