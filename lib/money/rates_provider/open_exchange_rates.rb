@@ -98,7 +98,7 @@ class Money
         # Hash[iso_currency][iso_date], as it will allow more efficient caching/retrieving
         response['rates'].each do |iso_date, day_rates|
           day_rates.each do |iso_currency, rate|
-            result[iso_currency][iso_date] = rate.to_d
+            result[iso_currency][iso_date] = BigDecimal(rate.to_s)
           end
         end
 
