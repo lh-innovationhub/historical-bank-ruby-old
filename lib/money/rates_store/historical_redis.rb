@@ -90,8 +90,8 @@ class Money
         end
 
         @redis.pipelined do |pipeline|
-          currency_date_rate_hash.each do |iso_code, iso_date_rate_hash|
-            k = key(iso_code)
+          currency_date_rate_hash.each do |iso_currency_code, iso_date_rate_hash|
+            k = key(iso_currency_code)
             string_rates = iso_date_rate_hash.transform_values(&:to_s)
             pipeline.mapped_hmset(k, string_rates)
           end
