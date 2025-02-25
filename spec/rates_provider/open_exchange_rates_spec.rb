@@ -51,14 +51,20 @@ class Money
           let(:base_currency_iso_code) { 'USD' }
           let(:response_body) { File.read('./spec/fixtures/historical-2010-10-01.json') }
 
-          it 'format response similar to the full-month/time-series response' do
-            expect(subject.keys =~ ['base', 'rates', 'start_date', 'end_date'])
+          it 'returns currency codes as keys' do
+            expect(subject.keys).not_to include('base', 'rates', 'start_date', 'end_date')
+            expect(subject.keys).to all(match(/^[A-Z]{3}$/))
+            expect(subject.keys).to include('USD', 'EUR', 'GBP')
           end
 
           it 'return rates only for given date' do
-            dates = subject.map { |country, dates_hash| dates_hash.keys }.flatten.uniq
-            expect(dates.size == 1)
-            expect(dates.first == '2010-10-01')
+            dates = subject.map { |country, dates_hash|
+              next unless country.match?(/^[A-Z]{3}$/)
+              dates_hash.keys
+            }.flatten.compact.uniq
+
+            expect(dates.size).to eq(1)
+            expect(dates.first).to eq('2010-10-01')
           end
 
           it 'returns correct rates' do
@@ -69,7 +75,7 @@ class Money
           end
         end
       end
-      
+
 
       describe '#fetch_rates with UNLIMITED account' do
         let(:provider) { OpenExchangeRates.new(app_id, base_currency, timeout, OpenExchangeRates::AccountType::UNLIMITED) }
@@ -91,7 +97,7 @@ class Money
         subject { provider.fetch_rates(date) }
 
         context 'when date is before 1999' do
-          let(:date) { Faker::Date.between(Date.new(1900, 1, 1), Date.new(1998, 12, 31)) }
+          let(:date) { Faker::Date.between(from: Date.new(1900, 1, 1), to: Date.new(1998, 12, 31)) }
           let(:status) { 200 }
           let(:response_body) { '' }
 
@@ -239,7 +245,7 @@ class Money
             end
           end
         end
-        
+
 
       end
     end
