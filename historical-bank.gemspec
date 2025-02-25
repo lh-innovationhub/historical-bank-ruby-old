@@ -40,10 +40,10 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 3.1.0'
 
+  s.add_runtime_dependency 'bigdecimal', '>= 3.0'
   s.add_runtime_dependency 'httparty',   '~> 0.19'
   s.add_runtime_dependency 'money',      '~> 6.7'
   s.add_runtime_dependency 'redis',      '>= 4.0'
-  s.add_runtime_dependency 'bigdecimal', '>= 3.0'
 
   s.add_development_dependency 'faker'
   s.add_development_dependency 'pry-byebug'
