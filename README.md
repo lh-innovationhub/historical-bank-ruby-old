@@ -1,3 +1,13 @@
+# ⚠️
+
+the upstream from Sykscanner is no longer maintained, see: https://github.com/Skyscanner/historical-bank-ruby/pull/4
+
+Since GitHub doesn't allow us to change the fork source, a new repo had to be created, see: https://github.com/lh-innovationhub/historical-bank-ruby
+
+--> all commits were transferred and the new upstream merged in.
+
+
+
 # historical-bank-ruby
 
 [![Gem Version](https://badge.fury.io/rb/historical-bank.svg)](https://badge.fury.io/rb/historical-bank)
