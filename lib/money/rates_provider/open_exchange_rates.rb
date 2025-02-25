@@ -80,7 +80,7 @@ class Money
       #   oer.fetch_rates(Date.new(2016, 10, 5))
       #   If Free or Developer account in openexchangerates.org, it will return only for the given date
       #   # => {"AED"=>{"2016-10-05"=>#<BigDecimal:7fa19a188e98,'0.3672682E1',18(36)>}, {"AFN"=>{"2016-10-05"=>#<BigDecimal:7fa19a188e98,'0.3672682E1',18(36)>}, ...
-      #   If Enterprise or Unlimited account, it will return for the entire month for the given date 
+      #   If Enterprise or Unlimited account, it will return for the entire month for the given date
       #   # => {"AED"=>{"2016-10-01"=>#<BigDecimal:7fa19a188e98,'0.3672682E1',18(36)>, "2016-10-02"=>#<BigDecimal:7fa19b11a5c8,'0.367296E1',18(36)>, ...
       def fetch_rates(date)
         if date < MIN_DATE || date > max_date
@@ -124,7 +124,7 @@ class Money
           raise RequestFailed, "Month rates request failed for #{date} - "\
                                "Code: #{response.code} - Body: #{response.body}"
         end
-        response        
+        response
       end
 
       def fetch_historical_rates(date)
@@ -138,7 +138,7 @@ class Money
         end
 
         # Making the return value comply to the same structure returned from the #fetch_month_rates method (/time-series.json API)
-        { 
+        {
           'start_date' => date_string,
           'end_date' => date_string,
           'base' => response['base'],
