@@ -1,7 +1,7 @@
 # historical-bank-ruby
 
 [![Gem Version](https://badge.fury.io/rb/historical-bank.svg)](https://badge.fury.io/rb/historical-bank)
-[![Build Status](https://travis-ci.org/Skyscanner/historical-bank-ruby.svg?branch=master)](https://travis-ci.org/Skyscanner/historical-bank-ruby)
+[![Build Status](https://app.travis-ci.com/jeopard/historical-bank-ruby.svg?branch=master)](https://app.travis-ci.com/github/jeopard/historical-bank-ruby)
 
 ## Description
 
@@ -11,6 +11,8 @@ contrary to most bank implementations that provide only current market rates.
 As the HTTP requests to OER can add latency to your calls, a `RatesStore` (cache) based on Redis was added, making it super-fast.
 
 You can use it as your default bank and keep calling the standard `money` gem methods (`Money#exchange_to`, `Bank#exchange_with`). On top of that, we've added a few more methods that allow accessing historical rates (`Money#exchange_to_historical`, `Bank#exchange_with_historical`).
+
+This gem was initially developed in Skyscanner. However as far as I know, Skyscanner no longer does Ruby development, so I doubt that the [original repo](https://github.com/Skyscanner/historical-bank-ruby) will ever receive any updates.
 
 
 ### Base currency

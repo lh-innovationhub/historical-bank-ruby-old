@@ -1,6 +1,4 @@
 #
-# Copyright 2017 Skyscanner Limited.
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -18,17 +16,18 @@
 
 Gem::Specification.new do |s|
   s.name        = 'historical-bank'
-  s.version     = '0.1.5'
+  s.version     = '0.1.7'
   s.summary     = 'Historical Bank'
   s.description = 'A `Money::Bank::Base` with historical exchange rates'
   s.authors     = ['Kostis Dadamis', 'Emili Parreno']
-  s.email       = ['kostis.dadamis@skyscanner.net']
-  s.homepage    = 'https://github.com/Skyscanner/historical-bank-ruby'
+  s.email       = ['provlhma@gmail.com']
+  s.homepage    = 'https://github.com/jeopard/historical-bank-ruby'
   s.license     = 'Apache-2.0'
 
-  s.files = Dir['lib/**/*.rb', 'examples/*.rb', 'spec/**/*.rb', 'spec/**/*.json'].to_a
+  s.files = Dir['lib/**/*.rb', 'examples/*.rb', 'spec/**/*.rb']
   s.files += ['Gemfile', 'historical-bank.gemspec', 'README.md', 'LICENSE',
-              'CONTRIBUTING.md', 'AUTHORS', 'CHANGELOG.md']
+              'CONTRIBUTING.md', 'AUTHORS', 'CHANGELOG.md',
+              'spec/fixtures/time-series-2015-09.json']
 
   s.test_files = s.files.grep(%r{^spec/})
 
